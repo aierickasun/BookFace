@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -21,7 +21,7 @@ $(document).ready( function() {
                 $("#jqueryButton").text("Title Fade Out");
             }
             $("#jqueryButton").show();
-        }); 
+        });
     });
 
     $("#login-tab-id").on("click", function() {
@@ -70,7 +70,7 @@ function loginUser() {
         // Log user in
         // make xmlhttp request to see if valid log in...
         // Stores session key as cookie
-        const Url = "https://shrouded-plains-69897.herokuapp.com/api/users";
+        const Url = "https://bkface.herokuapp.com/api/users";
         const Data = {
             name: $("#inputLoginUserName").val(),
             password: $("#inputLoginPassword").val(),
@@ -92,7 +92,7 @@ function loginUser() {
         fetch(Url, otherParam)
         .then((data) => {
             // console.log(data);
-            return data.json(); 
+            return data.json();
         })
         .then((res) => {
             // console.log(res.book_face_user_id == 'null');
@@ -141,11 +141,11 @@ function signupUser() {
         allValid = false;
 
     } else if ($("#inputSignupRePassword").val() != $("#inputSignupPassword").val()) {
-        
+
         $("#inputSignupRePassword").addClass('is-invalid');
         allValid = false;
 
-    } else {    
+    } else {
         $("#inputSignupRePassword").removeClass('is-invalid');
         $("#inputSignupRePassword").addClass('is-valid');
     }
@@ -154,7 +154,7 @@ function signupUser() {
         // Log user in
         // make xmlhttp request to see if valid log in...
         // Stores session key as cookie
-        const Url = "https://shrouded-plains-69897.herokuapp.com/api/users";
+        const Url = "https://bkface.herokuapp.com/api/users";
         const Data = {
             name: $("#inputSignupUserName").val(),
             password: $("#inputSignupPassword").val(),
@@ -176,7 +176,7 @@ function signupUser() {
         fetch(Url, otherParam)
         .then((data) => {
             // console.log(data);
-            return data.json(); 
+            return data.json();
         })
         .then((res) => {
             // console.log(res.book_face_user_id == 'null');

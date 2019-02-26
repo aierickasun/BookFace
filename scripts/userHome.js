@@ -61,7 +61,7 @@ function getUserId() {
 }
 
 function getUserInfo(userId) {
-    const Url = "https://shrouded-plains-69897.herokuapp.com/api/users/"+userId;
+    const Url = "https://bkface.herokuapp.com/api/users/"+userId;
     // const Data = {
     //     name: $("#inputSignupUserName").val(),
     //     password: $("#inputSignupPassword").val(),
@@ -91,7 +91,7 @@ function getUserInfo(userId) {
     });
 }
 function getFriendInfo(friendId, lastUser) {
-    const Url = "https://shrouded-plains-69897.herokuapp.com/api/posts/"+friendId;
+    const Url = "https://bkface.herokuapp.com/api/posts/"+friendId;
     // const Data = {
     //     name: $("#inputSignupUserName").val(),
     //     password: $("#inputSignupPassword").val(),
@@ -234,7 +234,7 @@ function searchQuery() {
     $("#search-page").css("display", "block");
 
     // Get all users
-    const Url = "https://shrouded-plains-69897.herokuapp.com/api/users";
+    const Url = "https://bkface.herokuapp.com/api/users";
     // const Data = {
     //     name: $("#inputSignupUserName").val(),
     //     password: $("#inputSignupPassword").val(),
@@ -334,7 +334,7 @@ function addFriend(userId) {
     // Make post request to add friend);
 
 
-    const Url = "https://shrouded-plains-69897.herokuapp.com/api/users/"+userId;
+    const Url = "https://bkface.herokuapp.com/api/users/"+userId;
         const Data = {
             // const user_id = getUserId();
             user_id:$.cookie("book_face_id")
@@ -429,7 +429,7 @@ function makePost(post) {
         $("#textarea-char-counter").val('');
         $('#charNum').text('');
         var userId = "";
-        const Url = "https://shrouded-plains-69897.herokuapp.com/api/posts/"+user_id;
+        const Url = "https://bkface.herokuapp.com/api/posts/"+user_id;
         const Data = {
             // const user_id = getUserId();
             new_post: curPost
