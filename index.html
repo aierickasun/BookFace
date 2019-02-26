@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="./styles/index.css"/>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" crossorigin="anonymous">
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="./scripts/index.js"></script>
+        <title>
+            Welcome to Bookface
+        </title>
+    </head>
+    <body>
+        <div class="container-fluid background-body" >
+            <div class="row ">
+                <div class="col-xs-0 col-md-1">
+
+                </div>
+                <div class="col-md-10  col-xs-12 form-container">
+
+                    
+
+                    <div class="form-content">
+                        <nav class="navbar navbar-expand-md navbar-light bookface-logo-container">
+                                <div class="bookface-logo">
+                                  <a class="navbar-brand" href="#">BookFace</a>
+                                </div>
+                        </nav>
+                        <div class="tab-bars">
+                            <ul class="nav nav-tabs">
+
+                                <li class="login-tab noselect nav-item active" id="login-tab-id"><a href="#" class="whole-tab-a">Log In</a></li>
+                                <li class="signup-tab noselect nav-item" id="signup-tab-id"><a href="#" class="whole-tab-a">Sign Up</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="alert" role="alert" id="alert-box-login"></div>
+                        <div class="alert" role="alert" id="alert-box-signup"></div>
+                        <form class="form-horizontal" id="login-form">
+                            <div class="form-group col-centered first-input ">
+                                <label class="col-sm-2 col-md-2 control-label"> Username </label>
+                                <div class="col-sm-10 col-md-8 input-centered">
+                                    <input type="text" class="form-control" id="inputLoginUserName" placeholder="Username">
+                                </div>
+                            </div>
+                            <div class="form-group col-centered second-inputs">
+                                <label class="col-sm-2 col-md-2 control-label"> Password </label>
+                                <div class="col-sm-10 col-md-8 input-centered">
+                                    <input type="Password" class="form-control" id="inputLoginPassword" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group col-centered">
+                                <button type="button" class="btn btn-outline-primary" onClick="loginUser()">Login</button>
+                            </div>
+
+                        </form>
+
+                        <form class="form-horizontal" id="signup-form">
+                            <div class="form-group col-centered first-input ">
+                                <label class="col-sm-2 col-md-2 control-label"> Username </label>
+                                <div class="col-sm-10 col-md-8 input-centered">
+                                    <input type="Text" class="form-control" id="inputSignupUserName" placeholder="Username">
+                                </div>
+                            </div>
+                            <div class="form-group col-centered second-inputs">
+                                <label class="col-sm-2 col-md-2 control-label"> Password </label>
+                                <div class="col-sm-10 col-md-8 input-centered">
+                                    <input type="Password" class="form-control" id="inputSignupPassword" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group col-centered second-inputs">
+                                <span class="col-sm-2 col-md-2 control-label"> Re-enter Password </span>
+                                <div class="col-sm-10 col-md-8 input-centered">
+                                    <input type="Password" class="form-control" id="inputSignupRePassword" placeholder="Re-enter Password">
+                                </div>
+                            </div>
+                            <div class="form-group col-centered">
+                                <button type="button" class="btn btn-outline-primary" onClick="signupUser()">Signup</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-xs-0">
+
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

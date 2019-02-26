@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-typeahead/2.10.6/jquery.typeahead.min.css" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="./styles/userHome.css"/>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-typeahead/2.10.6/jquery.typeahead.min.js" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/bloodhound.min.js" crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="./scripts/userHome.js"></script>
+        <title>
+            Bookface Home
+        </title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">BookFace</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active" id="userHomeNavButton">
+                        <a class="nav-link" href="#" onClick="userHome()">Home</a>
+                      </li>
+                      <li class="nav-item" id="searchQueryNavButton">
+                        <a class="nav-link" href="#" onClick="searchQuery()">Search</a>
+                      </li>
+                      <li class="nav-item" id="logoutNavButton">
+                        <a class="nav-link" href="#" onClick="logout()">Logout</a>
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+
+        </nav>
+        <div class="container-fluid background-body" id="home-page">
+            <div class="row ">
+                <div class="col col-md-4 profile-container">
+                    <div id="profilePane" class="profile-pane">
+                        <div class="default-profile-image">
+                            <img src="./fb_default_male.jpg" alt="Profile Image"/>
+                        </div>
+                        <div class="user-profile-name">
+                            <span id="user-profile-name"><span>
+                        </div>  
+
+
+                    </div>
+
+                </div>
+                <div class="col-xs-12 col-md-8 second-pane-container" id="post-container">
+                    <div class="col-md-12 col-xs-12 new-post second-pane-row-content">
+                        
+                        <div class="new-post-input-body md-form">
+                            <textarea id="textarea-char-counter" class="form-control md-textarea" maxlength="256" rows="6" placeholder="Enter your thoughts..." onkeyup="makePost(this)" oninput="filterChars(this)"></textarea>
+                            <div id="charNum">
+                            </div>
+                              
+                        </div>
+
+                    </div>
+                    
+                    <!--
+                    <div class="col-12  container-fluid post-class">
+                        <div class="row">
+                            <div class="col-3 user-info-container">
+                                <div class="col-12 post-image-container">
+                                    <img src="./fb_default_female.jpg" class="post-image"/>
+                                </div>
+                                <div class="col-12 post-name">
+                                    Bob Marley
+                                </div>
+                            </div>
+                            <div class="col-9 user-post-container">
+                                <div class="user-post-content">
+                                I'm a navy seals. I'm a navy seals. I'm a navy seals. I'm a navy seals. I'm a navy seals. I'm a navy seals. I'm a navy seals. I'm a navy seals. I'm a navy seals. I'm a navy seals.
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div  class="container-fluid background-body" id="search-page">
+            <div class="row">
+                <div class="col-12" id="input-container">
+                    <!-- <input id="input-box" class="typeahead" type="text" placeholder="Name..."/> -->
+
+                    <form id="form-users" name="form-users">
+                        <div class="typeahead__container">
+                            <div class="typeahead__field">
+                                <div class="typeahead__query">
+                                    <input class="js-typeahead-users" name="users[query]" type="search" placeholder="Search" autocomplete="off">
+                                </div>
+                                <div class="typeahead__button">
+                                    <button type="submit">
+                                        <i class="typeahead__search-icon"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+            <div class="row " id="search-results">
+                <div class="col col-md-4 profile-container" id="searchProfile">
+                    <div class="profile-pane">
+                        <div class="default-profile-image">
+                            <img src="./fb_default_male.jpg" alt="Profile Image"/>
+                        </div>
+                        <div class="user-profile-name">
+                            <span id="search-profile-name"><span>
+                        </div>  
+                        <div >
+                            <button type="button" class="btn btn-light" id="friend-button">Follow</button>
+                     </div>
+                    </div>
+
+                </div>
+                <div class="col-xs-12 col-md-8 second-pane-container" id="search-post-container">
+                </div>
+            </div>
+        </div>
+
+        
+    </body>
+</html>
